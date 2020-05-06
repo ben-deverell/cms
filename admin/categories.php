@@ -2,8 +2,6 @@
 
 <div id="wrapper">
 
-
-
     <!-- Navigation -->
     <?php include "includes/navigation.php"; ?>
 
@@ -23,6 +21,20 @@
                         Welcome to Admin
                         <small>bob</small>
                     </h1>
+
+                    <div class="col-xs-6">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="cat-title">Add Category</label>
+                                <input type="text" class="form-control" name="cat_title">
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" valuename="submit" value="Add Category">
+                            </div>
+
+                        </form>
+                    </div>
+
 
                 </div>
             </div>
