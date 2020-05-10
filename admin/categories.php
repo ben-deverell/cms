@@ -23,13 +23,34 @@
                     </h1>
 
                     <div class="col-xs-6">
-                        <form action="">
+
+                        <?php
+                        if (isset($_POST['submit'])) {
+
+                            // echo "<h1>Hello</h1>";
+                            $cat_title = $_POST['cat_title'];
+                            if ($cat_title == "" || empty($cat_title)) {
+                                echo "Category field is empty";
+                            } else {
+                                $query = "INSERT INTO categories(cat_title) ";
+                                $query .= "VALUES('{$cat_title}') ";
+
+                                $create_category_query = mysqli_query($connection, $query);
+
+                                if (!$create_category_query) {
+                                    die('QUERY FAILED' . mysqli_error($connection));
+                                }
+                            }
+                        }
+                        ?>
+
+                        <form action="" method="post">
                             <div class="form-group">
                                 <label for="cat-title">Add Category</label>
                                 <input type="text" class="form-control" name="cat_title">
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-primary" type="submit" valuename="submit" value="Add Category">
+                                <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                             </div>
 
                         </form>
