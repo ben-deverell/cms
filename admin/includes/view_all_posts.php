@@ -45,31 +45,18 @@
         }
         ?>
 
-        <td>10</td>
-        <td>Ben</td>
-        <td>Bootstrap</td>
-        <td>Booty</td>
-        <td>Status</td>
-        <td>Image</td>
-        <td>Tags</td>
-        <td>Comments</td>
-        <td>Date</td>
-
     </tbody>
-
-
-
 </table>
 
 <?php
 
 if (isset($_GET['delete'])) {
+
+
+    $the_post_id = $_GET['delete'];
+
+    $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
+
+    $delete_query = mysqli_query($connection, $query);
 }
-
-$the_post_id = $_GET['delete'];
-
-$query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
-
-$delete_query = mysqli_query($connection, $query);
-
 ?>
