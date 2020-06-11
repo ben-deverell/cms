@@ -72,6 +72,8 @@ if (isset($_POST['update_post'])) {
         <input value="<?php echo $post_title;  ?>" type="text" class="form-control" name="post_title">
     </div>
 
+
+
     <div class="form-group">
         <select name="post_category_id" id="">
 
@@ -97,6 +99,28 @@ if (isset($_POST['update_post'])) {
         <input value="<?php echo $post_author;  ?>" type="text" class="form-control" name="post_author"
             id="post_author">
     </div>
+
+    <div class="form-group">
+        <label for="category">Role</label>
+        <select name="user_role" id="">
+
+            <?php
+
+            $query = "SELECT * FROM users";
+            $select_user = mysqli_query($connection, $query);
+
+            confirmQuery($select_user);
+            while ($row = mysqli_fetch_assoc($select_user)) {
+                $user_id = $row['user_id'];
+                $user_role = $row['user_role'];
+                echo "<option value='$user_id'>{$user_role}</option>";
+            }
+            ?>
+        </select>
+    </div>
+
+
+
 
     <div class="form-group"><label for="post_status">Post Status</label>
         <input value="<?php echo $post_status;  ?>" type="text" class="form-control" name="post_status">
