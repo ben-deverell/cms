@@ -42,7 +42,7 @@
                         <a href="./posts.php">View All Posts</a>
                     </li>
                     <li>
-                        <a href="posts.php?source=add_post"=>Add posts</a>
+                        <a href="posts.php?source=add_post">Add posts</a>
                     </li>
                 </ul>
             </li>
@@ -57,10 +57,10 @@
                     Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li>
-                        <a href="#">Dropdown Item</a>
+                        <a href="users.php">View All Users</a>
                     </li>
                     <li>
-                        <a href="#">Dropdown Item</a>
+                        <a href="users.php?source=add_user">Add User</a>
                     </li>
                 </ul>
             </li>
