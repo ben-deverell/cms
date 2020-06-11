@@ -31,58 +31,57 @@
 
 <form action="" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-        <label for="title">Post Title</label>
-        <input type="text" class="form-control" name="title">
+
+    <div class="form-group"><label for="first_name">First Name</label>
+        <input type="text" class="form-control" name="user_firstname" id="user_firstname">
+    </div>
+
+    <div class="form-group"><label for="last_name">Last Name</label>
+        <input type="text" class="form-control" name="last_name">
     </div>
 
 
+
+
     <div class="form-group">
-        <label for="category">Category</label>
-        <select name="post_category" id="">
+        <label for="category">Role</label>
+        <select name="user_role" id="">
 
             <?php
 
-            $query = "SELECT * FROM categories";
-            $select_categories = mysqli_query($connection, $query);
+            $query = "SELECT * FROM users";
+            $select_user = mysqli_query($connection, $query);
 
-            confirmQuery($select_categories);
-            while ($row = mysqli_fetch_assoc($select_categories)) {
-                $cat_id = $row['cat_id'];
-                $cat_title = $row['cat_title'];
-                echo "<option value='$cat_id'>{$cat_title}</option>";
+            confirmQuery($select_user);
+            while ($row = mysqli_fetch_assoc($select_user)) {
+                $user_id = $row['user_id'];
+                $user_role = $row['user_role'];
+                echo "<option value='$user_id'>{$user_role}</option>";
             }
             ?>
         </select>
     </div>
 
-
-    <div class="form-group"><label for="author">Post Author</label>
-        <input type="text" class="form-control" name="author" id="author">
-    </div>
-
-    <div class="form-group"><label for="post_status">Post Status</label>
-        <input type="text" class="form-control" name="post_status">
-    </div>
-
-
+    <!-- 
     <div class="post-group"><label for="post_image">Post Image</label>
         <input type="file" class="form-control-file" name="image">
+    </div> -->
+
+    <div class="form-group"><label for="username">Username</label>
+        <input type="text" class="form-control" name="user_name">
     </div>
 
-    <div class="form-group"><label for="post_tags">Post Tags</label>
-        <input type="text" class="form-control" name="post_tags">
+    <div class="form-group"><label for="user_password">Password</label>
+        <input type="password" class="form-control" name="user_password">
     </div>
+
+    </div>
+
+
+
 
     <div class="form-group">
-        <label for="post_comment">Post Content</label>
-        <textarea class="form-control" name="post_comment" id="" cols="30" rows="10">
-        </textarea>
-
-    </div>
-
-    <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
+        <input class="btn btn-primary" type="submit" name="user_password" value="Add User">
     </div>
 
 </form>
