@@ -176,7 +176,7 @@
             var data = google.visualization.arrayToDataTable([
             ['Data', 'Count'],
                 <?php
-                $element_text = ['All Posts','Active Posts','Draft Posts','Comments','Unapproved Comments','Users','Subscribers','Categories'];
+                $element_text = ['All Posts','Active Posts','Draft Posts','Comments','Pending Comments','Users','Subscribers','Categories'];
                 $element_count = [$post_count,$post_published_count,$post_draft_count,$comment_count,$comment_unapprove_count,$user_count,$subscriber_count,$category_count];
 
                 for($i = 0; $i < 8; $i++){
